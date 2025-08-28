@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Builds</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0; top: 0;
+        width: 100vw; height: 100vh;
+        background: rgba(0,0,0,0.8);
+        justify-content: center; align-items: center;
+      }
+      .modal-content {
+        background: #fff;
+        padding: 24px;
+        border-radius: 10px;
+        max-width: 800px;
+        width: 90vw;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .close {
+        position: absolute;
+        top: 10px; right: 20px;
+        font-size: 2em; cursor: pointer;
+        color: #333;
+      }
+      .modal-slider {
+        position: relative;
+        width: 400px; height: 225px;
+        margin-bottom: 20px;
+      }
+      .modal-slide {
+        display: none;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        position: absolute;
+        left: 0; top: 0;
+      }
+      .modal-slide.active { display: block; }
+      .slider-btn {
+        position: absolute;
+        top: 50%; transform: translateY(-50%);
+        background: rgba(0,0,0,0.5); color: white;
+        border: none; font-size: 1.5em;
+        padding: 8px; cursor: pointer; z-index: 2;
+        border-radius: 50%;
+      }
+      .slider-btn.prev { left: 10px; }
+      .slider-btn.next { right: 10px; }
+      .modal-video {
+        margin-bottom: 20px;
+      }
+      .modal-description a {
+        display: inline-block;
+        margin-top: 10px;
+        background: #222;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+      }
+      .project-view-btn {
+        display: inline-block;
+        margin-top: 10px;
+        background: #222;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html">Hello, World</a></li>
+      <li><a href="projects.html">Build Log</a></li>
+      <li><a href="about.html">CTRL+ ME</a></li>
+      <li><a href="contact.html">Link Up</a></li>
+    </ul>
+  </nav>
+  <a href="images/ThiaraCV.png" class="cv-btn" download>📄 Download CV</a>
+  <section id="projects" class="section projects">
+    <h2 class="section-title">My Builds</h2>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <article class="project-card">
+        <div class="project-slider">
+          <img src="images/NurturedNotes.png" alt="Nurtured Notes Screenshot" class="slide active" />
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">Nurtured Notes</h3>
+          <p class="project-description">
+            Built with HTML, CSS, and JavaScript, this app helps you stay organized and zen.
+          </p>
+          <a href="#" class="project-view-btn" data-modal="modal-nn">View Details</a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card">
+        <div class="project-slider">
+          <img src="images/wordle2.0.png" alt="Wordle 2.0 Screenshot" class="slide active" />
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">Wordle 2.0</h3>
+          <p class="project-description">
+            My version of the popular word game, built with HTML, CSS, and JavaScript. It insults you with every guess, making it a fun challenge.
+          </p>
+          <a href="#" class="project-view-btn" data-modal="modal-wordle">View Details</a>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card">
+        <div class="project-slider">
+          <img src="images/NeonSocial.png" alt="Neon Social Screenshot" class="slide active" />
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">Neon Social</h3>
+          <p class="project-description">
+            Neon Social is a mock social media platform designed to showcase my skills in HTML, CSS, and JavaScript. It features a vibrant neon theme and interactive elements.
+          </p>
+          <a href="#" class="project-view-btn" data-modal="modal-neon">View Details</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="music-wrapper">
+    <iframe
+      src="https://open.spotify.com/embed/playlist/65aPSop4kpfQxd8pAPJgPC?utm_source=generator"
+      width="100%"
+      height="80"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    ></iframe>
+  </div>
+
+  <!-- Modals -->
+  <!-- Nurtured Notes Modal -->
+  <div id="modal-nn" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-slider">
+        <img src="images/Nurtured Notes - Personal - Microsoft​ Edge 2025_08_13 10_44_05.png" alt="Nurtured Notes Screenshot 1" class="modal-slide active" />
+        <img src="images/Nurtured Notes - Personal - Microsoft​ Edge 2025_08_13 10_46_33.png" alt="Nurtured Notes Screenshot 2" class="modal-slide" />
+        <img src="images/Nurtured Notes - Personal - Microsoft​ Edge 2025_08_13 10_47_11.png" alt="Nurtured Notes Screenshot 3" class="modal-slide" />
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+      </div>
+      <div class="modal-video">
+        <iframe width="400" height="225" src="images/Nurtured Notes - Personal - Microsoft​ Edge 2025-08-28 14-33-03.mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="modal-description">
+        <h3>Nurtured Notes</h3>
+        <p>Built with HTML, CSS, and JavaScript, this app helps you stay organized and zen.</p>
+        <a href="https://nurturednote.netlify.app/" target="_blank">Launch Project</a>
+      </div>
+    </div>
+  </div>
+  <!-- Wordle 2.0 Modal -->
+  <div id="modal-wordle" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-slider">
+        <img src="images/Wordle 2.0 - Personal - Microsoft​ Edge 2025_08_13 10_47_32.png" alt="Wordle 2.0 Screenshot 1" class="modal-slide active" />
+        <img src="images/Wordle 2.0 - Personal - Microsoft​ Edge 2025_08_13 10_47_33.png" alt="Wordle 2.0 Screenshot 2" class="modal-slide" />
+        <img src="images/Wordle 2.0 - Personal - Microsoft​ Edge 2025_08_13 10_49_27.png" alt="Wordle 2.0 Screenshot 3" class="modal-slide" />
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+      </div>
+      <div class="modal-video">
+        <iframe width="400" height="225" src="images/Wordle 2.0 - Personal - Microsoft​ Edge 2025-08-28 14-31-58.mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="modal-description">
+        <h3>Wordle 2.0</h3>
+        <p>My version of the popular word game, built with HTML, CSS, and JavaScript. It insults you with every guess, making it a fun challenge.</p>
+        <a href="https://github.com/thiarachetty/Mock-Wordle-Game" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+  <!-- Neon Social Modal -->
+  <div id="modal-neon" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-slider">
+        <img src="images/Neon Social - Personal - Microsoft​ Edge 2025_08_13 10_50_41.png" alt="Neon Social Screenshot 1" class="modal-slide active" />
+        <img src="images/Neon Social - Personal - Microsoft​ Edge 2025_08_13 10_50_47.png" alt="Neon Social Screenshot 2" class="modal-slide" />
+        <img src="images/Neon Social - Personal - Microsoft​ Edge 2025_08_13 10_51_06.png" alt="Neon Social Screenshot 3" class="modal-slide" />
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+      </div>
+      <div class="modal-video">
+        <iframe width="400" height="225" src="images/Neon Social - Personal - Microsoft​ Edge 2025-08-13 10-34-09.mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="modal-description">
+        <h3>Neon Social</h3>
+        <p>Neon Social is a mock social media platform designed to showcase my skills in HTML, CSS, and JavaScript. It features a vibrant neon theme and interactive elements.</p>
+        <a href="https://github.com/thiarachetty/Neon-Social" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inline Script -->
+  <script>
+    // Open modal
+    document.querySelectorAll('.project-view-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var modalId = btn.getAttribute('data-modal');
+        document.getElementById(modalId).style.display = 'flex';
+      });
+    });
+
+    // Close modal
+    document.querySelectorAll('.modal .close').forEach(closeBtn => {
+      closeBtn.onclick = function() {
+        closeBtn.closest('.modal').style.display = 'none';
+      };
+    });
+
+    // Close modal when clicking outside modal-content
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) modal.style.display = 'none';
+      });
+    });
+
+    // Slider functionality for each modal
+    document.querySelectorAll('.modal').forEach(modal => {
+      const slides = modal.querySelectorAll('.modal-slide');
+      let current = 0;
+      const showSlide = (i) => {
+        slides.forEach((slide, idx) => slide.classList.toggle('active', idx === i));
+      };
+      const prevBtn = modal.querySelector('.slider-btn.prev');
+      const nextBtn = modal.querySelector('.slider-btn.next');
+      if (prevBtn && nextBtn) {
+        prevBtn.onclick = () => {
+          current = (current === 0) ? slides.length - 1 : current - 1;
+          showSlide(current);
+        };
+        nextBtn.onclick = () => {
+          current = (current === slides.length - 1) ? 0 : current + 1;
+          showSlide(current);
+        };
+        showSlide(current);
+      }
+    });
+  </script>
+</body>
+</html>

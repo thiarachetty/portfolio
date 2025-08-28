@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thiara|Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Unbounded:wght@500&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+  <!-- 🌐 Floating CV Button -->
+  <a href="images/ThiaraCV.png" class="cv-btn" download>📄 Download CV</a>
+
+  <!-- 🌟 Sticky Navigation -->
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html">Hello, World</a></li>
+      <li><a href="projects.html">Build Log</a></li>
+      <li><a href="about.html">CTRL+ ME</a></li>
+      <li><a href="contact.html">Link Up</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🚀 Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <img src="images/illustration.png" alt="TDogg" class="avatar" />
+      <div class="text">
+        <h1 class="name">Hi, I'm Thiara</h1>
+        <h2 class="typing" id="typing"></h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🛠️ Projects Section -->
+  <section id="projects" class="section">
+    <h2>💻 Projects</h2>
+    <div class="project-list">
+      <div class="project">Project 1 - Nurtured Notes</div>
+      <div class="project">Project 2 - Wordle 2.0</div>
+      <div class="project">Project 3 - Neon Social</div>
+      <div class="project">Project 4 - Coming Soon...</div>
+    </div>
+  </section>
+
+  <!-- 👁️ About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>     
+    <p>
+      I’m Thiara, a creative fullstack developer with a love for the stars, code, and storytelling. From crafting digital dreamscapes to debugging in dark mode, I bring heart and precision to everything I build.
+    </p>
+    <br>
+  </section>
+
+  <!--My Skills-->
+  <section id="skills">
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills-container">
+      <div class="skill">
+        <h3>HTML5</h3>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 95%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <h3>CSS</h3>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 90%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <h3>JavaScript</h3>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 80%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <h3>Python</h3>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 90%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <h3>React</h3>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 75%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <h3>Fullstack Dev</h3>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 85%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💌 Contact Section -->
+  <section id="contact" class="section">
+    <h2>📬 Contact</h2>
+    <p>Email: <a href="mailto:your@email.com">thiara1403@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/thiarachetty" target="_blank">github.com/thiarachetty</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/thiara-chetty" target="_blank">linkedin.com/in/thiara-chetty</a></p>
+  </section>
+  <div class="music-wrapper">
+  <iframe
+    src="https://open.spotify.com/embed/playlist/65aPSop4kpfQxd8pAPJgPC?utm_source=generator"
+    width="100%"
+    height="80"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+  ></iframe>
+</div>
+
+
+
+  <!-- 💻 Typewriter Script -->
+  <script>
+    const typing = document.getElementById("typing");
+    const titles = ["Web Developer", "Full-Stack Developer"];
+    let partIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeText() {
+      const currentText = titles[partIndex];
+      const displayText = currentText.substring(0, charIndex);
+      typing.textContent = displayText;
+
+      if (!isDeleting && charIndex < currentText.length) {
+        charIndex++;
+        setTimeout(typeText, 100);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(typeText, 50);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) partIndex = (partIndex + 1) % titles.length;
+        setTimeout(typeText, 1000);
+      }
+    }
+
+    typeText();
+  </script>
+
+</body>
+</html>
